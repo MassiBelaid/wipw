@@ -29,9 +29,9 @@ public class Joue {
         return id_joue;
     }
 
-    /*public Joueur getJoueur() {
+    public Joueur getJoueur() {
         return joueur;
-    }*/
+    }
 
     public Equipe getEquipe() {
         return equipe;

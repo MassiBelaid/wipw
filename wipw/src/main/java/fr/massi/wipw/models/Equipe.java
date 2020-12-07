@@ -1,5 +1,6 @@
 package fr.massi.wipw.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Equipe {
     private String nom_stade;
 
     @OneToMany(mappedBy = "equipe")
+    @JsonIgnore
     private List<Joue> joues;
 
 
@@ -33,9 +35,9 @@ public class Equipe {
         this.nom_stade = nom_stade;
     }
 
-    /*public List<Joue> getJoues() {
+    public List<Joue> getJoues() {
         return joues;
-    }*/
+    }
 
     public void setJoues(List<Joue> joues) {
         this.joues = joues;

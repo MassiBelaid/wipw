@@ -1,5 +1,6 @@
 package fr.massi.wipw.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -24,7 +25,12 @@ public class Joueur {
     private Date date_fin;
 
     @OneToMany(mappedBy = "joueur")
+    @JsonIgnore
     private List<Joue> joues;
+
+    @ManyToMany(mappedBy = "joueursDisp")
+    @JsonIgnore
+    private List<QuestionSimple> joueur_disp;
 
 
     public List<Joue> getJoues() {
