@@ -20,6 +20,7 @@ public class QuestionSimpleController {
 
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public List<QuestionSimple> getQuestions(){
         return questionSimpleRepository.findAll();

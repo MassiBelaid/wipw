@@ -25,6 +25,7 @@ public class JoueurController {
 
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public List<Joueur> getJoueurs(){
         return  joueurRepository.findAll();

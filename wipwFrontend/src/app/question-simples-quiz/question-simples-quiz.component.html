@@ -1,1 +1,13 @@
-<p>question-simples-quiz works!</p>
+<div>
+  HOLLA : {{questions[0].joueursDisp[0].nom}}
+</div>
+
+
+<ul *ngFor="let joueur of joueurs">
+  <li>
+    <h1>{{joueur.prenom}} - {{joueur.nom}}</h1>
+    <img src="{{joueur.url_image}}" alt="joueur.nom"/>
+  </li>
+</ul>
+
+
