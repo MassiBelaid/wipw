@@ -44,14 +44,15 @@ public class JoueurController {
     }
 
 
-/*
-    @GetMapping
-    @RequestMapping("{nom}")
-    public ResponseEntity<Joueur> getWithName(@PathVariable String nom){
-        Joueur joueur =  joueurService.getJoueurWithName(nom);
 
-        return new ResponseEntity<Joueur>(joueur, HttpStatus.OK);
-    }*/
+    @GetMapping
+    @RequestMapping("nom/{nom}")
+    public ResponseEntity<List<Joueur>> getWithName(@PathVariable String nom){
+        System.out.println("joueur avec nom == "+nom);
+        List<Joueur> joueurs =  joueurRepository.findByNom(nom);
+
+        return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

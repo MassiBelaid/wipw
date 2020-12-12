@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { QuestionSimplesQuizComponent } from './question-simples-quiz/question-simples-quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuizComponent
+    QuizComponent,
+    QuestionSimplesQuizComponent
   ],
   imports: [
     BrowserModule,
