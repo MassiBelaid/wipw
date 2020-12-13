@@ -1,0 +1,17 @@
+
+<h1 class="titre">Qui a déjà joué avec ces 3 joueurs</h1>
+<div class="row listjoueurs">
+  <div class="col-3 singlejoueur" *ngFor="let number of [0,1,2]">
+    <h3>{{joueurs?.joueursDisp[number].prenom}}</h3>
+    <h2>{{joueurs?.joueursDisp[number].nom | uppercase}}</h2>
+    <img class=" mx-auto d-block" src="{{joueurs?.joueursDisp[number].url_image}}" alt="{{joueurs?.joueursDisp[number].nom}}">
+  </div>
+</div>
+<h1 class="titre">Propositions : </h1><!--
+<div class="row listjoueurs">
+  <div class="col-3 singlejoueur" *ngFor="let number of [0,1,2]">
+    <h3>{{choix[number].prenom}}</h3>
+    <h2>{{choix[number].nom | uppercase}}</h2>
+    <img class=" mx-auto d-block" src="{{choix[number].url_image}}" alt="{{choix[number].nom}}">
+  </div>
+</div>-->

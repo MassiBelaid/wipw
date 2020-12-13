@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuestionSimplesQuizComponent } from './question-simples-quiz/question-simples-quiz.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SingleQuestionSimpleComponent } from './single-question-simple/single-question-simple.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
-    QuestionSimplesQuizComponent
+    QuestionSimplesQuizComponent,
+    SingleQuestionSimpleComponent
   ],
   imports: [
     BrowserModule,
