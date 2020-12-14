@@ -28,9 +28,19 @@ public class Joueur {
     @JsonIgnore
     private List<Joue> joues;
 
+    @OneToMany(mappedBy = "reponse")
+    @JsonIgnore
+    private List<QuestionSimple> reponses;
+
     @ManyToMany(mappedBy = "joueursDisp")
     @JsonIgnore
     private List<QuestionSimple> joueur_disp;
+
+
+    @ManyToMany(mappedBy = "joueursProp")
+    @JsonIgnore
+    private List<QuestionSimple> joueur_prop;
+
 
 
     public List<Joue> getJoues() {

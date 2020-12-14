@@ -7,31 +7,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SingleQuestionSimpleComponent implements OnInit {
   @Input() joueurs;
-  @Input() propositions;
-  private choix: any[] = new Array();
 
   constructor() { }
 
   ngOnInit() {
-    console.log('ICII' + this.joueurs.joueursDisp[3]);
-    /*this.choix.push(this.joueurs.joueursDisp[3]);
-    console.log('ICII' + this.joueurs.joueursDisp[3]);
-    for (const proposition of this.propositions) {
-      console.log(proposition);
-      if (proposition.id_joueur !== this.joueurs.joueursDisp[0].id_joueur &&
-        proposition.id_joueur !== this.joueurs.joueursDisp[1].id_joueur &&
-        proposition.id_joueur !== this.joueurs.joueursDisp[2].id_joueur &&
-        proposition.id_joueur !== this.joueurs.joueursDisp[3].id_joueur) {
-          this.choix.push(proposition);
-      }
-    }*/
-    //this.choix = this.shuffle(this.choix);
+  }
+
+
+  choisir(choix: number) {
+    if (this.joueurs.joueursProp[choix].id_joueur === this.joueurs.reponse.id_joueur) {
+      console.log('BONNE REPONSE (-;');
+    } else {
+      console.log('MAUVAISE REPONSE :-(');
+    }
   }
 
 
 
    shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {

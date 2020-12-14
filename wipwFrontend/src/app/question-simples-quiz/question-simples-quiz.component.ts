@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {JoueurService} from '../Services/joueur.service';
 import {QuestionSimpleService} from '../Services/question-simple.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class QuestionSimplesQuizComponent implements OnInit {
    private questions: any[] = new Array();
    private numQuestion: number;
 
-  constructor(private joueurService: JoueurService, private questionsSimpleService: QuestionSimpleService) { }
+  constructor( private questionsSimpleService: QuestionSimpleService) { }
 
   ngOnInit() {
     this.numQuestion = 0;
@@ -22,11 +21,6 @@ export class QuestionSimplesQuizComponent implements OnInit {
       }
     );
 
-    this.joueurService.getJoueurs().subscribe(
-      joueurs => {
-        this.joueurs = joueurs;
-      }
-    );
 
   }
 

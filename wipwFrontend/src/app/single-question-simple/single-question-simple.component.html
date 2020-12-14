@@ -4,14 +4,17 @@
   <div class="col-3 singlejoueur" *ngFor="let number of [0,1,2]">
     <h3>{{joueurs?.joueursDisp[number].prenom}}</h3>
     <h2>{{joueurs?.joueursDisp[number].nom | uppercase}}</h2>
-    <img class=" mx-auto d-block" src="{{joueurs?.joueursDisp[number].url_image}}" alt="{{joueurs?.joueursDisp[number].nom}}">
+    <img class="mx-auto d-block imagejoueur" src="{{joueurs?.joueursDisp[number].url_image}}" alt="{{joueurs?.joueursDisp[number].nom}}">
   </div>
 </div>
-<h1 class="titre">Propositions : </h1><!--
-<div class="row listjoueurs">
-  <div class="col-3 singlejoueur" *ngFor="let number of [0,1,2]">
-    <h3>{{choix[number].prenom}}</h3>
-    <h2>{{choix[number].nom | uppercase}}</h2>
-    <img class=" mx-auto d-block" src="{{choix[number].url_image}}" alt="{{choix[number].nom}}">
-  </div>
-</div>-->
+<h1 class="titre2">Propositions : </h1>
+<div class="row listjoueurs2">
+  <button class="col-3 singlejoueur2" *ngFor="let number of [0,1,2]">
+    <div (click)="choisir(number)">
+    <h3 class="prenomjoueur">{{joueurs?.joueursProp[number].prenom}}</h3>
+    <h2 class="nomjoueur">{{joueurs?.joueursProp[number].nom | uppercase}}</h2>
+    <img class=" mx-auto d-block imagejoueur2" src="{{joueurs?.joueursProp[number].url_image}}"
+         alt="{{joueurs?.joueursProp[number].nom}}">
+    </div>
+  </button>
+</div>

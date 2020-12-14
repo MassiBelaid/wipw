@@ -21,6 +21,40 @@ public class QuestionSimple {
             inverseJoinColumns = @JoinColumn(name="id_joueur"))
     private List<Joueur> joueursDisp;
 
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Joueur reponse;
+
+    @ManyToMany
+    @JoinTable(name="joueur_prop",
+            joinColumns = @JoinColumn(name = "id_question"),
+            inverseJoinColumns = @JoinColumn(name="id_joueur"))
+    private List<Joueur> joueursProp;
+
+    public Joueur getReponse() {
+        return reponse;
+    }
+
+    public void setReponse(Joueur reponse) {
+        this.reponse = reponse;
+    }
+
+    public void setJoueursProp(List<Joueur> joueursProp) {
+        this.joueursProp = joueursProp;
+    }
+
+    public void setText_reponse(String text_reponse) {
+        this.text_reponse = text_reponse;
+    }
+
+    public List<Joueur> getJoueursProp() {
+        return joueursProp;
+    }
+
+    public String getText_reponse() {
+        return text_reponse;
+    }
+
     public List<Joueur> getJoueursDisp() {
         return joueursDisp;
     }
