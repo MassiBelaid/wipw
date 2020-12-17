@@ -9,12 +9,12 @@
 }
 
 .listjoueurs{
-  background-color:  #80de7a;
+  background-color:  #3bbb2b;
 }
 
 .singlejoueur{
   text-align: center;
-  background-color:  #c2edbf;
+  background-color:  #abe5a4;
   margin-left: 45px;
   margin-right: 45px;
   margin-top: 10px;
@@ -34,11 +34,11 @@
 }
 
 .listjoueurs2{
-  background-color: #e1f810;
+  background-color: #abe5a4;
 }
 
 .singlejoueur2{
-  background-color: #eaf48f;
+  background-color: #3bbb2b;
   border: solid;
   text-align: center;
   margin-left: 45px;

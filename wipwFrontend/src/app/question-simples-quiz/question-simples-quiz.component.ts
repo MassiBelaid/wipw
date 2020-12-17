@@ -18,7 +18,7 @@ export class QuestionSimplesQuizComponent implements OnInit {
     this.score = 0;
     this.questionsSimpleService.getquesions().subscribe(
       questions => {
-        this.questions = questions;
+        this.questions = this.questionsSimpleService.shuffle(questions);
       }
     );
   }
