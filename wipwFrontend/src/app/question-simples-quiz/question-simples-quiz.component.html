@@ -1,18 +1,15 @@
-
-<app-dingle-question-simple [joueurs] = "questions[numQuestion]">
-</app-dingle-question-simple>
-
-<!--
-<div>
-  HOLLA : {{questions[numQuestion].joueursDisp[0].nom}}
+<div class="infoparcours">
+  <div class="row">
+    <div class="col-6"><a [routerLink]="['']">Retour à l'accueil</a></div>
+    <div class="col-6">Question Numéro {{numQuestion+1}}</div>
+  </div>
 </div>
 
 
-<ul *ngFor="let joueur of joueurs">
-  <li>
-    <h1>{{joueur.prenom}} - {{joueur.nom}}</h1>
-    <img src="{{joueur.url_image}}" alt="joueur.nom"/>
-  </li>
-</ul>
--->
+<app-dingle-question-simple [joueurs] = "questions[numQuestion]" (sendResultToParent)="getResult($event)">
+</app-dingle-question-simple>
+
+<div class="infoparcours">
+  <p>Votre score {{score}}</p>
+</div>
 

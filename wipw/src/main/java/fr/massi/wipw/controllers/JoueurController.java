@@ -20,10 +20,6 @@ public class JoueurController {
     @Autowired
     private JoueurRepository joueurRepository;
 
-    @Autowired
-    private JoueurService joueurService;
-
-
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
@@ -49,7 +45,6 @@ public class JoueurController {
     @GetMapping
     @RequestMapping("nom/{nom}")
     public ResponseEntity<List<Joueur>> getWithName(@PathVariable String nom){
-        System.out.println("joueur avec nom == "+nom);
         List<Joueur> joueurs =  joueurRepository.findByNom(nom);
 
         return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);

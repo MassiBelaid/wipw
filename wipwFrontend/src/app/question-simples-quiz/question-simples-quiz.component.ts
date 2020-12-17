@@ -7,21 +7,30 @@ import {QuestionSimpleService} from '../Services/question-simple.service';
   styleUrls: ['./question-simples-quiz.component.css']
 })
 export class QuestionSimplesQuizComponent implements OnInit {
-   private joueurs: any[] = new Array();
    private questions: any[] = new Array();
    private numQuestion: number;
+   private score: number;
 
   constructor( private questionsSimpleService: QuestionSimpleService) { }
 
   ngOnInit() {
     this.numQuestion = 0;
+    this.score = 0;
     this.questionsSimpleService.getquesions().subscribe(
       questions => {
         this.questions = questions;
       }
     );
+  }
 
-
+  getResult(result: boolean) {
+    if (result) {
+      this.score++;
+      console.log('BONNE REPONSE (-;');
+    } else {
+      console.log('MAUVAISE REPONSE :-(');
+    }
+    this.numQuestion++;
   }
 
 }

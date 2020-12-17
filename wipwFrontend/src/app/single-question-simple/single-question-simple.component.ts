@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-dingle-question-simple',
@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SingleQuestionSimpleComponent implements OnInit {
   @Input() joueurs;
+  @Output() sendResultToParent = new EventEmitter();
 
   constructor() { }
 
@@ -15,11 +16,17 @@ export class SingleQuestionSimpleComponent implements OnInit {
 
 
   choisir(choix: number) {
-    if (this.joueurs.joueursProp[choix].id_joueur === this.joueurs.reponse.id_joueur) {
+    /*if (this.joueurs.joueursProp[choix].id_joueur === this.joueurs.reponse.id_joueur) {
       console.log('BONNE REPONSE (-;');
     } else {
       console.log('MAUVAISE REPONSE :-(');
-    }
+    }*/
+    this.sendResponse(this.joueurs.joueursProp[choix].id_joueur === this.joueurs.reponse.id_joueur);
+  }
+
+
+  sendResponse(resul: boolean) {
+    this.sendResultToParent.emit(resul);
   }
 
 
