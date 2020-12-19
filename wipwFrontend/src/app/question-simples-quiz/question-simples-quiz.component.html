@@ -7,7 +7,7 @@
 </div>
 
 
-<app-dingle-question-simple [joueurs] = "questions[numQuestion]" (sendResultToParent)="getResult($event)">
+<app-dingle-question-simple [question]="questions[numQuestion]" (sendResultToParent)="getResult($event)">
 </app-dingle-question-simple>
 
 <div class="infoparcours">

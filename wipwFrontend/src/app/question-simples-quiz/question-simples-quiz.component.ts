@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {QuestionSimpleService} from '../Services/question-simple.service';
+import {QuestionSimple} from '../Model/QuestionSimple';
 
 @Component({
   selector: 'app-question-simples-quiz',
@@ -7,7 +8,7 @@ import {QuestionSimpleService} from '../Services/question-simple.service';
   styleUrls: ['./question-simples-quiz.component.css']
 })
 export class QuestionSimplesQuizComponent implements OnInit {
-   private questions: any[] = new Array();
+   private questions: QuestionSimple[] = new Array();
    private numQuestion: number;
    private score: number;
 
@@ -19,6 +20,9 @@ export class QuestionSimplesQuizComponent implements OnInit {
     this.questionsSimpleService.getquesions().subscribe(
       questions => {
         this.questions = this.questionsSimpleService.shuffle(questions);
+      },
+      (error) => {
+        alert('impossible de récupérer les données du serveur');
       }
     );
   }

@@ -2,19 +2,19 @@
 <h1 class="titre">Qui a déjà joué avec ces 3 joueurs</h1>
 <div class="row listjoueurs">
   <div class="col-3 singlejoueur" *ngFor="let number of [0,1,2]">
-    <h3>{{joueurs?.joueursDisp[number].prenom}}</h3>
-    <h2>{{joueurs?.joueursDisp[number].nom | uppercase}}</h2>
-    <img class="mx-auto d-block imagejoueur" src="{{joueurs?.joueursDisp[number].url_image}}" alt="{{joueurs?.joueursDisp[number].nom}}">
+    <h3>{{question?.joueursDisp[number].prenom}}</h3>
+    <h2>{{question?.joueursDisp[number].nom | uppercase}}</h2>
+    <img class="mx-auto d-block imagejoueur" src="{{question?.joueursDisp[number].url_image}}" alt="{{question?.joueursDisp[number].nom}}">
   </div>
 </div>
 <h1 class="titre2">Propositions : </h1>
 <div class="row listjoueurs2">
   <button class="col-3 singlejoueur2" *ngFor="let number of [0,1,2]">
     <div (click)="choisir(number)">
-    <h3 class="prenomjoueur">{{joueurs?.joueursProp[number].prenom}}</h3>
-    <h2 class="nomjoueur">{{joueurs?.joueursProp[number].nom | uppercase}}</h2>
-    <img class=" mx-auto d-block imagejoueur2" src="{{joueurs?.joueursProp[number].url_image}}"
-         alt="{{joueurs?.joueursProp[number].nom}}">
+    <h3 class="prenomjoueur">{{question?.joueursProp[number].prenom}}</h3>
+    <h2 class="nomjoueur">{{question?.joueursProp[number].nom | uppercase}}</h2>
+    <img class=" mx-auto d-block imagejoueur2" src="{{question?.joueursProp[number].url_image}}"
+         alt="{{question?.joueursProp[number].nom}}">
     </div>
   </button>
 </div>

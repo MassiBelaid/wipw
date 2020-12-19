@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {QuestionSimple} from '../Model/QuestionSimple';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class QuestionSimpleService {
   constructor(private http: HttpClient) { }
 
 
-  getquesions(): Observable<any> {
-    return this.http.get(this.urlBase + 'squestions');
+  getquesions(): Observable<QuestionSimple []> {
+    return this.http.get<QuestionSimple []>(this.urlBase + 'squestions');
   }
 
   shuffle(array) {

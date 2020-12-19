@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./single-question-simple.component.css']
 })
 export class SingleQuestionSimpleComponent implements OnInit {
-  @Input() joueurs;
+  @Input() question;
   @Output() sendResultToParent = new EventEmitter();
 
   constructor() { }
@@ -16,7 +16,7 @@ export class SingleQuestionSimpleComponent implements OnInit {
 
 
   choisir(choix: number) {
-    this.sendResponse(this.joueurs.joueursProp[choix].id_joueur === this.joueurs.reponse.id_joueur);
+    this.sendResponse(this.question.joueursProp[choix].id_joueur === this.question.reponse.id_joueur);
   }
 
 

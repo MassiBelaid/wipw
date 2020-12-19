@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Joueur} from '../Model/Joueur';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class JoueurService {
   constructor(private http: HttpClient) { }
 
 
-  getJoueurs(): Observable<any> {
-    return this.http.get(this.urlBase + 'api/joueurs');
+  getJoueurs(): Observable<Joueur []> {
+    return this.http.get<Joueur []>(this.urlBase + 'api/joueurs');
   }
 }
