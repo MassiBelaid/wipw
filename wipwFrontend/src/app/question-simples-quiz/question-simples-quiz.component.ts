@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {QuestionSimpleService} from '../Services/question-simple.service';
-import {QuestionSimple} from '../Model/QuestionSimple';
+import {QuestionSimpleService} from '../services/question-simple.service';
+import {QuestionSimple} from '../models/QuestionSimple';
 
 @Component({
   selector: 'app-question-simples-quiz',

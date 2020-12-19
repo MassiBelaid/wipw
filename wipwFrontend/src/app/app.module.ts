@@ -8,6 +8,8 @@ import { QuestionSimplesQuizComponent } from './question-simples-quiz/question-s
 import { HttpClientModule } from '@angular/common/http';
 import { SingleQuestionSimpleComponent } from './single-question-simple/single-question-simple.component';
 import { Errors404Component } from './errors404/errors404.component';
+import { AdminAuthentificationComponent } from './admin-authentification/admin-authentification.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { Errors404Component } from './errors404/errors404.component';
     QuizComponent,
     QuestionSimplesQuizComponent,
     SingleQuestionSimpleComponent,
-    Errors404Component
+    Errors404Component,
+    AdminAuthentificationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

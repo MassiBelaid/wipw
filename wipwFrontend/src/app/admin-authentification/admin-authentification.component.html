@@ -1,0 +1,22 @@
+<div class="entete">
+  <div class="row">
+    <div class="col-4"><a [routerLink]="['']">Retour à l'accueil</a></div>
+    <div class="col-4"><a [routerLink]="['']"> <img class="logo" src="assets/images/logo-wipw.png" alt="logo"></a></div>
+  </div>
+</div>
+
+<div class="formulaire">
+  <form [formGroup]="adminForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="adminForm.invalid">Se connecter</button>
+  </form>
+</div>
