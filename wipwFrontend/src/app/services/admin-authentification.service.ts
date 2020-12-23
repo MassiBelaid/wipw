@@ -8,11 +8,11 @@ import {Admin} from '../models/Admin';
 })
 export class AdminAuthentificationService {
 
-  private urlBase = 'http://localhost:8080/api/';
+  private urlBase = 'http://localhost:8080/api/admin/connexion';
 
   constructor(private httpClient: HttpClient) { }
 
   connexion(admin: Admin): Observable<any> {
-    return this.httpClient.post(this.urlBase + 'admin/connexion', admin);
+    return this.httpClient.post(this.urlBase, admin);
   }
 }

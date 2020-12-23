@@ -43,8 +43,7 @@ public class WipwApplication {
 					.antMatchers(HttpMethod.GET, "/api/joues").permitAll()
 					.antMatchers(HttpMethod.POST, "/api/joues").hasRole("ADMIN")
 					.antMatchers(HttpMethod.PUT, "/api/joues").hasRole("ADMIN")
-					.antMatchers(HttpMethod.DELETE, "/api/joues").hasRole("ADMIN")
-					.anyRequest().authenticated();
+					.antMatchers(HttpMethod.DELETE, "/api/joues").hasRole("ADMIN");
 		}
 	}
 

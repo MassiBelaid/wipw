@@ -32,9 +32,8 @@ public class AdminController {
     }
 
 
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
-    @ResponseStatus(HttpStatus.ACCEPTED)
     public AdminConnexion connexion(@RequestBody final Admin admin){
         Admin adminBdd = adminRepository.findByEmail(admin.getEmail());
         AdminConnexion adminConnexion = new AdminConnexion();

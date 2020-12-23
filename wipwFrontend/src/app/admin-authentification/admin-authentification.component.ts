@@ -26,12 +26,15 @@ export class AdminAuthentificationComponent implements OnInit {
 
   onSubmitForm() {
     this.adminAuthentificationService.connexion(this.adminForm.value).subscribe(
-      adminConnexion => {
+      (adminConnexion) => {
         if (adminConnexion.status) {
             console.log('Vous êtes connecté');
         } else {
           console.log('erreur identifiants');
         }
+      },
+      (error) => {
+        console.log(error);
       }
     );
   }
