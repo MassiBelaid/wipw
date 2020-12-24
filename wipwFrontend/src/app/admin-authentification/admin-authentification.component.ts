@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AdminAuthentificationService} from '../services/admin-authentification.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-authentification',
@@ -9,8 +10,12 @@ import {AdminAuthentificationService} from '../services/admin-authentification.s
 })
 export class AdminAuthentificationComponent implements OnInit {
   adminForm: FormGroup;
+  erreurFormulaire: string;
+  token: string;
 
-  constructor(private formBuilder: FormBuilder, private adminAuthentificationService: AdminAuthentificationService) { }
+  constructor(private formBuilder: FormBuilder,
+              private adminAuthentificationService: AdminAuthentificationService,
+              private router: Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -28,9 +33,11 @@ export class AdminAuthentificationComponent implements OnInit {
     this.adminAuthentificationService.connexion(this.adminForm.value).subscribe(
       (adminConnexion) => {
         if (adminConnexion.status) {
-            console.log('Vous êtes connecté');
+            localStorage.setItem('token', adminConnexion.token);
+            console.log(localStorage.getItem('token'));
+            this.router.navigate(['/']);
         } else {
-          console.log('erreur identifiants');
+          this.erreurFormulaire = 'Mauvais identifiants de connexion';
         }
       },
       (error) => {

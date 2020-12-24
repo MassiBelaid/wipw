@@ -15,4 +15,12 @@ export class AdminAuthentificationService {
   connexion(admin: Admin): Observable<any> {
     return this.httpClient.post(this.urlBase, admin);
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
+
+  isLogged(): boolean {
+    return !! localStorage.getItem('token');
+  }
 }

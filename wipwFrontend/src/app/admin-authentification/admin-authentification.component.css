@@ -11,3 +11,7 @@ img{
 .formulaire{
   margin-top: 50px;
 }
+
+.erreurFormulaire{
+  color: red;
+}

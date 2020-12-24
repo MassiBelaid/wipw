@@ -16,6 +16,7 @@
       <label for="password">Mot de passe</label>
       <input type="password" id="password" class="form-control" formControlName="password">
     </div>
+    <p class="erreurFormulaire">{{erreurFormulaire}}</p>
 
     <button type="submit" class="btn btn-primary" [disabled]="adminForm.invalid">Se connecter</button>
   </form>

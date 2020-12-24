@@ -10,6 +10,10 @@ import { SingleQuestionSimpleComponent } from './single-question-simple/single-q
 import { Errors404Component } from './errors404/errors404.component';
 import { AdminAuthentificationComponent } from './admin-authentification/admin-authentification.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import {LoginInterceptorProvider} from './interceptors/login.interceptor';
+import {LoginGuard} from './guard/login.guard';
+import {LogoutGuard} from './guard/logout.guard';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     QuestionSimplesQuizComponent,
     SingleQuestionSimpleComponent,
     Errors404Component,
-    AdminAuthentificationComponent
+    AdminAuthentificationComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginInterceptorProvider,
+              LoginGuard,
+              LogoutGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
