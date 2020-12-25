@@ -49,7 +49,7 @@ public class JoueurController {
         return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);
     }
 
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     @RequestMapping("nationalities")
     public ResponseEntity<List<String>> getNationalities(){
@@ -59,10 +59,18 @@ public class JoueurController {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     @RequestMapping("mult/{chaine}")
     public ResponseEntity<List<Joueur>> getWithMultCrit(@PathVariable String chaine){
         List<Joueur> joueurs =  joueurRepository.getWithMultCriteres(chaine);
+        return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);
+    }
+
+    @GetMapping
+    @RequestMapping("nationality/{nationality}")
+    public ResponseEntity<List<Joueur>> getWithNationality(@PathVariable String nationality){
+        List<Joueur> joueurs =  joueurRepository.getWithNationality(nationality);
         return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);
     }
 

@@ -38,4 +38,13 @@ public class JoueurRepositoryImpl implements JoueurRepositoryCustom{
 
         return query.getResultList();
     }
+
+    @Override
+    public List<Joueur> getWithNationality(String nationality) {
+        Query query = entityManager.createQuery("SELECT j FROM joueur j " +
+                "WHERE j.nationnalite = ?1 ", Joueur.class);
+        query.setParameter(1,nationality);
+
+        return query.getResultList();
+    }
 }

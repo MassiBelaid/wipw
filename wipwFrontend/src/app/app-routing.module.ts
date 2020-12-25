@@ -5,12 +5,15 @@ import {QuestionSimplesQuizComponent} from './question-simples-quiz/question-sim
 import {Errors404Component} from './errors404/errors404.component';
 import {AdminAuthentificationComponent} from './admin-authentification/admin-authentification.component';
 import {LogoutGuard} from './guard/logout.guard';
+import {GestionJoueursComponent} from './gestion-joueurs/gestion-joueurs.component';
+import {LoginGuard} from './guard/login.guard';
 
 
 const routes: Routes = [
   {path: '', component: QuizComponent},
   {path: 'quiz', component: QuestionSimplesQuizComponent},
   {path: 'admin-connexion', component: AdminAuthentificationComponent, canActivate: [LogoutGuard]},
+  {path: 'joueurs', component: GestionJoueursComponent, canActivate: [LoginGuard]},
   {path: 'not-found', component: Errors404Component},
   {path: '**', redirectTo: 'not-found'}
 

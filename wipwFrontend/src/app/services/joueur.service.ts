@@ -16,4 +16,8 @@ export class JoueurService {
   getJoueurs(): Observable<Joueur []> {
     return this.http.get<Joueur []>(this.urlBase + 'api/joueurs');
   }
+
+  getJoueursWithCritere(chaine: string): Observable<Joueur []> {
+    return this.http.get<Joueur []>(this.urlBase + 'api/joueurs/mult/' + chaine);
+  }
 }

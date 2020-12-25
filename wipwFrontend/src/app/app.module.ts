@@ -9,11 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SingleQuestionSimpleComponent } from './single-question-simple/single-question-simple.component';
 import { Errors404Component } from './errors404/errors404.component';
 import { AdminAuthentificationComponent } from './admin-authentification/admin-authentification.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import {LoginInterceptorProvider} from './interceptors/login.interceptor';
 import {LoginGuard} from './guard/login.guard';
 import {LogoutGuard} from './guard/logout.guard';
+import { GestionJoueursComponent } from './gestion-joueurs/gestion-joueurs.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +24,16 @@ import {LogoutGuard} from './guard/logout.guard';
     SingleQuestionSimpleComponent,
     Errors404Component,
     AdminAuthentificationComponent,
-    NavbarComponent
+    NavbarComponent,
+    GestionJoueursComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [LoginInterceptorProvider,
               LoginGuard,
               LogoutGuard],

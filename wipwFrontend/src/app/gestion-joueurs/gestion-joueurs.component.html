@@ -1,0 +1,17 @@
+<button class="btn btn-success" (click)="add()">Ajouter un joueur</button>
+<div class="form-group">
+  <label for="chaine">nom/prenom/nationalité du joueur</label>
+  <input type="text" class="form-control" id="chaine"
+         [(ngModel)]="chaine" (keyup)="search()"
+         aria-describedby="joueurHelp" placeholder="Ex : Messi">
+  <small id="joueurHelp" class="form-text text-muted">infos joueur</small>
+</div>
+
+<ul class="list-group">
+  <li *ngFor="let joueur of joueurs" class="list-group-item d-flex justify-content-between align-items-center">
+    <img class="icone" src="{{joueur.url_image}}" alt="{{joueur.nom}}">
+    {{joueur.prenom | titlecase}}  {{joueur.nom | uppercase}} Nationalité : {{joueur.nationnalite}}
+    <button class="btn btn-info" (click)="update(joueur.id_joueur)">Modifier</button>
+    <button class="btn btn-danger" (click)="delete(joueur.id_joueur)">Supprimer</button>
+  </li>
+</ul>
