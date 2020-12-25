@@ -3,12 +3,10 @@ package fr.massi.wipw.controllers;
 
 import fr.massi.wipw.models.Joueur;
 import fr.massi.wipw.repositories.JoueurRepository;
-import fr.massi.wipw.services.JoueurService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,6 +46,23 @@ public class JoueurController {
     public ResponseEntity<List<Joueur>> getWithName(@PathVariable String nom){
         List<Joueur> joueurs =  joueurRepository.findByNom(nom);
 
+        return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);
+    }
+
+
+    @GetMapping
+    @RequestMapping("nationalities")
+    public ResponseEntity<List<String>> getNationalities(){
+        List<String> nationalities =  joueurRepository.getNationalities();
+
+        return new ResponseEntity<List<String>>(nationalities, HttpStatus.OK);
+    }
+
+
+    @GetMapping
+    @RequestMapping("mult/{chaine}")
+    public ResponseEntity<List<Joueur>> getWithMultCrit(@PathVariable String chaine){
+        List<Joueur> joueurs =  joueurRepository.getWithMultCriteres(chaine);
         return new ResponseEntity<List<Joueur>>(joueurs, HttpStatus.OK);
     }
 
